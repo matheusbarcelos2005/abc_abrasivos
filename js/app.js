@@ -18,11 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCategories();
     renderProducts();
     updateCartIcon();
-    
+
     // WhatsApp Send Event
     document.getElementById('btnSendWhatsApp').addEventListener('click', sendWhatsAppBudget);
 
-    // Menu encolhível ao rolar a página
+    // Ajusta margem do body conforme altura real da navbar
+    function adjustBodyMargin() {
+        const navbar = document.getElementById('mainNavbar');
+        document.body.style.marginTop = navbar.offsetHeight + 'px';
+    }
+    adjustBodyMargin();
+    window.addEventListener('resize', adjustBodyMargin);
+
+    // Menu encolhível ao rolar
     const navbar = document.getElementById('mainNavbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -30,6 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             navbar.classList.remove('scrolled-nav');
         }
+        // Re-ajusta margem ao mudar tamanho da navbar
+        adjustBodyMargin();
     });
 });
 
@@ -124,27 +134,51 @@ function addToCart(productId) {
     if (!cart[productId]) {
         cart[productId] = 1;
     }
-    updateState();
+    updateCartIcon();
+    renderCartModal();
+    updateProductCard(productId); // Atualiza apenas o card certo, sem recarregar
 }
 
 window.addToCart = addToCart;
 
 function updateQty(productId, change) {
-    if (cart[productId]) {
+    if (cart[productId] !== undefined) {
         cart[productId] += change;
         if (cart[productId] <= 0) {
             delete cart[productId];
         }
-        updateState();
+        updateCartIcon();
+        renderCartModal();
+        updateProductCard(productId); // Atualiza apenas o card certo
     }
 }
 
 window.updateQty = updateQty;
 
-function updateState() {
-    renderProducts(); 
-    updateCartIcon();
-    renderCartModal();
+// Atualiza somente o card do produto afetado (sem recarregar a grid inteira)
+function updateProductCard(productId) {
+    const product = produtos.find(p => p.id == productId);
+    if (!product) return;
+    const qty = cart[productId] || 0;
+
+    // Encontra todos os cards com o botão que tem esse productId
+    const allCards = document.querySelectorAll('#productsGrid .product-card');
+    allCards.forEach(card => {
+        const btn = card.querySelector(`[onclick="addToCart(${productId})"]`);
+        const qtyDiv = card.querySelector('.qty-controls');
+        const infoDiv = card.querySelector('.product-info');
+        if (!btn && !qtyDiv) return;
+
+        // Encontrar a div de controle ou botão dentro deste card
+        const controlArea = infoDiv ? infoDiv.querySelector('.mt-auto') : null;
+        if (!controlArea) return;
+
+        if (qty === 0) {
+            controlArea.outerHTML = `<button class="btn btn-outline-primary w-100 mt-auto" style="border-width:2px; font-weight:600;" onclick="addToCart(${productId})"><i class="fa-solid fa-plus me-2"></i> Adicionar</button>`;
+        } else {
+            controlArea.outerHTML = `<div class="qty-controls mt-auto"><button class="qty-btn" onclick="updateQty(${productId}, -1)"><i class="fa-solid fa-minus"></i></button><input type="text" class="qty-input" value="${qty}" readonly><button class="qty-btn" onclick="updateQty(${productId}, 1)"><i class="fa-solid fa-plus"></i></button></div>`;
+        }
+    });
 }
 
 function updateCartIcon() {

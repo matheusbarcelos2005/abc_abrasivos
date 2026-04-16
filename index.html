@@ -19,35 +19,37 @@
     <!-- Header fixo -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
         <div class="container">
-            
-            <!-- Botão Menu Mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <!-- Logo Mobile (Visível apenas no celular) -->
-            <a class="navbar-brand d-lg-none py-0 m-0 mx-auto" href="#">
-                <img src="assets/images/logo.jpeg" alt="ABC Abrasivos Logo" style="height: 90px; width: auto; object-fit: contain;" class="rounded d-inline-block">
-            </a>
+            <!-- MOBILE: toggler esquerda + logo centralizado -->
+            <div class="navbar-mobile-bar d-lg-none">
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="mobile-logo-wrap">
+                    <a href="#" class="navbar-brand p-0 m-0">
+                        <img id="logo-mobile" src="assets/images/logo.jpeg" alt="ABC Abrasivos">
+                    </a>
+                </div>
+            </div>
 
-            <!-- Conteúdo do Menu -->
+            <!-- Menu collapsible (mobile dropdown + desktop side-by-side) -->
             <div class="collapse navbar-collapse w-100" id="navbarNav">
-                
-                <!-- Links do Menu (Esquerda) -->
-                <ul class="navbar-nav mb-2 mb-lg-0" style="flex: 1;">
+
+                <!-- Links (esquerda no desktop) -->
+                <ul class="navbar-nav mb-2 mb-lg-0" style="flex:1;">
                     <li class="nav-item"><a class="nav-link active" href="#">Início</a></li>
                     <li class="nav-item"><a class="nav-link" href="#catalogo">Produtos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
                 </ul>
 
-                <!-- Logo Desktop (Centro) -->
-                <a class="navbar-brand d-none d-lg-flex justify-content-center py-0 m-0" style="flex: 1;" href="#">
-                    <img src="assets/images/logo.jpeg" alt="ABC Abrasivos Logo" style="height: 160px; width: auto; object-fit: contain;" class="rounded d-inline-block">
+                <!-- Logo desktop (centro) -->
+                <a class="navbar-brand d-none d-lg-flex justify-content-center py-0 m-0" style="flex:1;" href="#">
+                    <img id="logo-desktop" src="assets/images/logo.jpeg" alt="ABC Abrasivos Logo">
                 </a>
 
-                <!-- Botão Orçamento (Direita) -->
-                <div class="d-flex justify-content-lg-end mt-3 mt-lg-0" style="flex: 1;">
+                <!-- Botão Orçamento (direita) -->
+                <div class="d-flex justify-content-lg-end mt-3 mt-lg-0" style="flex:1;">
                     <button class="btn btn-outline-light nav-budget-btn" data-bs-toggle="modal" data-bs-target="#budgetModal" id="headerBudgetBtn">
                         <i class="fa-solid fa-cart-shopping me-1"></i> Orçamento
                         <span class="badge bg-danger rounded-pill ms-2" id="cartCount">0</span>
