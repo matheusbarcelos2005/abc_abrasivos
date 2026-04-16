@@ -8,15 +8,27 @@
 }
 
 html {
-    scroll-padding-top: 210px; /* Compensa a altura do menu na hora do scroll */
+    scroll-padding-top: 85px; /* Ajustado para deixar o título colado na barra minimalista */
     scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Inter', sans-serif;
     color: var(--text-color);
-    background-color: #FFFFFF;
+    background-color: #FDFDFD;
     margin-top: 180px; /* Compensa a altura fixa inicial da nova navbar */
+}
+
+h1, h2, h3, h4, h5, h6, .hero-title, .navbar-brand {
+    font-family: 'Outfit', sans-serif;
+}
+
+.glass-panel {
+    background: rgba(10, 37, 64, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 /* Navbar */
@@ -57,7 +69,8 @@ body {
 }
 
 .custom-btn {
-    background-color: var(--accent-color);
+    background: linear-gradient(135deg, var(--accent-color), #0044cc);
+    box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
     border: none;
     font-weight: 600;
     padding: 12px 30px;
@@ -66,8 +79,9 @@ body {
 }
 
 .custom-btn:hover {
-    background-color: #0052cc;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 102, 255, 0.5);
+    color: #fff;
 }
 
 /* Categories Menu */
@@ -96,17 +110,24 @@ body {
 
 /* Product Cards */
 .product-card {
-    border: 1px solid #eee;
+    background: #fff;
+    border: none;
     border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.4s, box-shadow 0.4s;
     height: 100%;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
 }
 .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(10, 37, 64, 0.1);
+}
+
+/* Ajustes de Seção para Alinhamento */
+#catalogo {
+    padding-top: 2rem !important; /* Menos espaço no topo para o título subir mais */
 }
 .product-img-wrapper {
     position: relative;
@@ -123,6 +144,10 @@ body {
     height: 100%;
     object-fit: contain; 
     padding: 1.5rem;
+    transition: transform 0.5s ease;
+}
+.product-card:hover .product-img-wrapper img {
+    transform: scale(1.08);
 }
 .product-info {
     padding: 1.5rem;

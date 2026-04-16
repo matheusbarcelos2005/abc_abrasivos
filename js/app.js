@@ -73,11 +73,15 @@ function renderProducts() {
         return;
     }
 
-    filteredProducts.forEach(product => {
+    filteredProducts.forEach((product, index) => {
         const qty = cart[product.id] || 0;
         
         const cardCol = document.createElement('div');
         cardCol.className = 'col-sm-6 col-md-4 col-lg-3';
+        // Adiciona atraso escalonado para um efeito de cascata elegante
+        cardCol.setAttribute('data-aos', 'fade-up');
+        cardCol.setAttribute('data-aos-delay', (index % 4) * 100);
+        
         cardCol.innerHTML = `
             <div class="product-card">
                 <div class="product-img-wrapper">
@@ -108,6 +112,11 @@ function renderProducts() {
         `;
         grid.appendChild(cardCol);
     });
+
+    // Atualiza o AOS para reconhecer os novos elementos dinâmicos
+    if (window.AOS) {
+        AOS.refresh();
+    }
 }
 
 // Cart Functions
