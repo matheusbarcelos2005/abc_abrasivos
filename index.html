@@ -3,71 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABC Abrasivos - Catálogo de Produtos</title>
-    <!-- Bootstrap CSS -->
+    <title>ABC Abrasivos</title>
+    <meta name="description" content="Distribuidora de abrasivos industriais em Gravataí-RS. Discos, lixas, rodas de polimento, escovas, EPIs e massas de polir. Orçamento via WhatsApp.">
+    <meta name="keywords" content="abrasivos industriais, disco de corte, disco flap, roda de polimento, lixa, cinta abrasiva, EPI, massa de polir, Gravataí, Rio Grande do Sul">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="ABC Abrasivos - Catálogo de Abrasivos Industriais">
+    <meta property="og:description" content="Portfólio completo em abrasivos para metal, madeira e acabamento. Solicite orçamento pelo WhatsApp.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <link rel="icon" href="assets/images/logo_favicon.png" type="image/png">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "ABC Abrasivos",
+        "description": "Distribuidora de abrasivos industriais: discos, lixas, rodas de polimento, escovas e EPIs.",
+        "url": "https://abcabrasivos.com.br",
+        "telephone": "+5551981860929",
+        "email": "contato@abcabrasivos.com.br",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "R. Aracaju, 475",
+            "addressLocality": "Gravataí",
+            "addressRegion": "RS",
+            "postalCode": "94185-360",
+            "addressCountry": "BR"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -29.9444,
+            "longitude": -50.9922
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "08:00",
+            "closes": "18:00"
+        }
+    }
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- AOS Animate On Scroll -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-    <!-- Header fixo -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
         <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Abrir menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <!-- MOBILE: toggler esquerda + logo centralizado -->
-            <div class="navbar-mobile-bar d-lg-none">
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="mobile-logo-wrap">
-                    <a href="#" class="navbar-brand p-0 m-0">
-                        <img id="logo-mobile" src="assets/images/logo.jpeg" alt="ABC Abrasivos">
-                    </a>
-                </div>
-            </div>
+            <a class="navbar-brand d-lg-none py-0 m-0 mx-auto" href="#">
+                <img src="assets/images/logo.jpeg" alt="ABC Abrasivos Logo" class="rounded d-inline-block navbar-logo navbar-logo-mobile">
+            </a>
 
-            <!-- Menu collapsible (mobile dropdown + desktop side-by-side) -->
             <div class="collapse navbar-collapse w-100" id="navbarNav">
-
-                <!-- Links (esquerda no desktop) -->
-                <ul class="navbar-nav mb-2 mb-lg-0" style="flex:1;">
+                <ul class="navbar-nav mb-2 mb-lg-0" style="flex: 1;">
                     <li class="nav-item"><a class="nav-link active" href="#">Início</a></li>
                     <li class="nav-item"><a class="nav-link" href="#catalogo">Produtos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
                 </ul>
 
-                <!-- Logo desktop (centro) -->
-                <a class="navbar-brand d-none d-lg-flex justify-content-center py-0 m-0" style="flex:1;" href="#">
-                    <img id="logo-desktop" src="assets/images/logo.jpeg" alt="ABC Abrasivos Logo">
+                <a class="navbar-brand d-none d-lg-flex justify-content-center py-0 m-0" style="flex: 1;" href="#">
+                    <img src="assets/images/logo.jpeg" alt="ABC Abrasivos Logo" class="rounded d-inline-block navbar-logo navbar-logo-desktop">
                 </a>
 
-                <!-- Botão Orçamento (direita) -->
-                <div class="d-flex justify-content-lg-end mt-3 mt-lg-0" style="flex:1;">
-                    <button class="btn btn-outline-light nav-budget-btn" data-bs-toggle="modal" data-bs-target="#budgetModal" id="headerBudgetBtn">
+                <div class="d-flex justify-content-lg-end mt-3 mt-lg-0" style="flex: 1;">
+                    <button class="btn btn-outline-light nav-budget-btn" data-bs-toggle="modal" data-bs-target="#budgetModal" id="headerBudgetBtn" type="button">
                         <i class="fa-solid fa-cart-shopping me-1"></i> Orçamento
                         <span class="badge bg-danger rounded-pill ms-2" id="cartCount">0</span>
                     </button>
                 </div>
-
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero-section d-flex align-items-center">
         <div class="container text-center text-md-start">
             <div class="row">
                 <div class="col-md-9 col-lg-7 hero-content">
                     <div class="glass-panel p-4 p-lg-5 rounded-4" data-aos="fade-up" data-aos-duration="1000">
                         <h1 class="display-4 fw-bold mb-3 hero-title">Tudo em abrasivos para sua produção</h1>
-                        <p class="lead mb-4 text-light opacity-75 fw-light" style="font-size: 1.15rem;">Qualidade superior, portfólio completo e entrega com a agilidade que a sua indústria não pode abrir mão.</p>
+                        <p class="lead mb-4 text-light opacity-75 fw-light hero-copy">
+                            Qualidade superior, portfólio completo e entrega com a agilidade que a sua indústria não pode abrir mão.
+                        </p>
                         <a href="#catalogo" class="btn btn-primary btn-lg custom-btn mt-2">
                             Acessar Catálogo <i class="fa-solid fa-arrow-right ms-2"></i>
                         </a>
@@ -77,7 +99,6 @@
         </div>
     </section>
 
-    <!-- Benefícios -->
     <section class="py-5 bg-light" id="beneficios">
         <div class="container py-3">
             <div class="row text-center g-4">
@@ -106,49 +127,87 @@
         </div>
     </section>
 
-    <!-- Catálogo -->
     <section class="py-5" id="catalogo">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-in" data-aos-duration="800">
                 <h2 class="fw-bold">Catálogo de Produtos</h2>
                 <p class="text-muted">Selecione suas categorias e monte seu orçamento</p>
             </div>
-            
-            <!-- Menu de categorias horizontal -->
-            <div class="categories-wrapper mb-4">
-                <div class="d-flex flex-nowrap overflow-auto pb-2 gap-2" id="categoryContainer">
-                    <!-- Categorias renderizadas via JS -->
+
+            <div class="catalog-toolbar mb-4" data-aos="fade-up" data-aos-duration="700">
+                <div class="row g-3 align-items-center">
+                    <div class="col-lg-6">
+                        <label for="catalogSearch" class="form-label small text-uppercase text-muted fw-semibold mb-2">Buscar produto</label>
+                        <div class="catalog-search-group">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="search" class="form-control" id="catalogSearch" placeholder="Ex.: disco, luva, roda...">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <label for="catalogSort" class="form-label small text-uppercase text-muted fw-semibold mb-2">Ordenar por</label>
+                        <select class="form-select" id="catalogSort">
+                            <option value="default">Destaque</option>
+                            <option value="name-asc">Nome A-Z</option>
+                            <option value="price-asc">Menor preço</option>
+                            <option value="price-desc">Maior preço</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <label class="form-label small text-uppercase text-muted fw-semibold mb-2">Ações</label>
+                        <button type="button" class="btn btn-outline-secondary w-100" id="clearCatalogFilters">
+                            Limpar filtros
+                        </button>
+                    </div>
                 </div>
+                <div class="row g-3 align-items-center mt-1">
+                    <div class="col-sm-6 col-lg-3">
+                        <label for="priceMin" class="form-label small text-uppercase text-muted fw-semibold mb-2">Preço mínimo</label>
+                        <div class="input-group">
+                            <span class="input-group-text">R$</span>
+                            <input type="number" class="form-control" id="priceMin" placeholder="0" min="0" step="1">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <label for="priceMax" class="form-label small text-uppercase text-muted fw-semibold mb-2">Preço máximo</label>
+                        <div class="input-group">
+                            <span class="input-group-text">R$</span>
+                            <input type="number" class="form-control" id="priceMax" placeholder="Sem limite" min="0" step="1">
+                        </div>
+                    </div>
+                    <div class="col-12" id="priceRangeErrorWrapper" hidden>
+                        <p class="text-danger small mb-0"><i class="fa-solid fa-triangle-exclamation me-1"></i>Preço mínimo não pode ser maior que o máximo.</p>
+                    </div>
+                </div>
+                <div class="catalog-summary mt-3" id="catalogSummary">Exibindo todos os produtos</div>
             </div>
 
-            <!-- Grid de produtos -->
-            <div class="row g-4" id="productsGrid">
-                <!-- Produtos renderizados via JS -->
+            <div class="categories-wrapper mb-4">
+                <div class="d-flex flex-nowrap overflow-auto pb-2 gap-2" id="categoryContainer"></div>
             </div>
+
+            <div class="row g-4" id="productsGrid"></div>
         </div>
     </section>
 
-    <!-- WhatsApp Floating Button -->
-    <button class="btn btn-success rounded-circle floating-whatsapp" data-bs-toggle="modal" data-bs-target="#budgetModal">
-        <i class="fa-brands fa-whatsapp fs-3"></i>
-        <span class="badge bg-danger rounded-pill floating-badge" id="floatingCartCount">0</span>
+    <button class="btn btn-success rounded-circle floating-whatsapp" id="floatingWhatsappBtn" type="button" aria-label="Falar com a gente pelo WhatsApp">
+        <i class="fa-brands fa-whatsapp fs-3" aria-hidden="true"></i>
     </button>
 
-    <!-- Sobre Nós / Especialidade -->
     <section class="py-5 bg-white" id="sobre">
         <div class="container py-lg-5">
             <div class="row align-items-center">
                 <div class="col-lg-5 mb-4 mb-lg-0 text-center text-lg-start" data-aos="fade-right" data-aos-duration="1000">
-                    <img src="assets/images/empresa.jpeg" alt="Empresa ABC Abrasivos" class="img-fluid rounded shadow-sm" style="max-width: 100%; height: auto;">
+                    <img src="assets/images/empresa.jpeg" alt="Empresa ABC Abrasivos" class="img-fluid rounded shadow-sm company-image" loading="lazy" decoding="async">
                 </div>
                 <div class="col-lg-7" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                    <h2 class="fw-bold mb-3" style="color: var(--primary-color);">Nossa Especialidade</h2>
-                    <div style="width: 50px; height: 4px; background-color: var(--accent-color); margin-bottom: 25px;"></div>
-                    <p class="text-muted" style="line-height: 1.8;">
+                    <h2 class="fw-bold mb-3 about-title">Nossa Especialidade</h2>
+                    <div class="about-divider"></div>
+                    <p class="text-muted about-copy">
                         Somos especialistas em <strong class="text-dark">abrasivos industriais</strong>, oferecendo produtos de qualidade incomparável para metal, madeira e acabamento.
                     </p>
-                    <p class="text-muted" style="line-height: 1.8;">
-                        Com anos de atuação no mercado, nossa missão é entregar as melhores ferramentas de desbaste e polimento para garantir que a sua produção tenha um acabamento impecável, com o melhor custo-benefício.<br><br>
+                    <p class="text-muted about-copy">
+                        Com anos de atuação no mercado, nossa missão é entregar as melhores ferramentas de desbaste e polimento para garantir que a sua produção tenha um acabamento impecável, com o melhor custo-benefício.
+                        <br><br>
                         Atendemos aos rigorosos padrões da indústria nacional com agilidade.
                     </p>
                 </div>
@@ -156,53 +215,101 @@
         </div>
     </section>
 
-    <!-- Contato -->
+    <section class="py-5 testimonials-section" id="depoimentos">
+        <div class="container py-lg-3">
+            <div class="text-center mb-5" data-aos="fade-in" data-aos-duration="800">
+                <h2 class="fw-bold text-white">O que nossos clientes dizem</h2>
+                <p class="testimonials-subtitle">A confiança de quem já trabalha com a gente</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars mb-3">★★★★★</div>
+                        <p class="testimonial-text">"Trabalhamos com a ABC há mais de 3 anos. A qualidade dos discos e a pontualidade na entrega são diferenciais que não abrimos mão. Recomendo sem hesitar."</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="testimonial-avatar">JP</div>
+                            <div class="ms-3">
+                                <div class="testimonial-name">João Paulo M.</div>
+                                <div class="testimonial-role">Gerente de Produção · Metalúrgica Fortaleza</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars mb-3">★★★★★</div>
+                        <p class="testimonial-text">"Atendimento rápido e produtos de primeira. Quando preciso com urgência, sei que posso contar com a ABC. Nunca me deixaram na mão."</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="testimonial-avatar">SR</div>
+                            <div class="ms-3">
+                                <div class="testimonial-name">Sandra R.</div>
+                                <div class="testimonial-role">Compradora · Indústria Trevisol</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars mb-3">★★★★★</div>
+                        <p class="testimonial-text">"Ótimo custo-benefício nas lixas e cintas abrasivas. Já testamos outras distribuidoras mas sempre voltamos para a ABC pela consistência."</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="testimonial-avatar">CE</div>
+                            <div class="ms-3">
+                                <div class="testimonial-name">Carlos Eduardo S.</div>
+                                <div class="testimonial-role">Supervisor de Manutenção · Construtora Zenith</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="py-5 bg-light" id="contato">
         <div class="container py-4">
             <div class="row g-0 rounded-4 shadow-sm overflow-hidden border border-light" data-aos="zoom-in" data-aos-duration="800">
-                <!-- Lado Azul -->
-                <div class="col-md-5 text-white p-5 d-flex flex-column justify-content-center" style="background-color: var(--primary-color);">
+                <div class="col-md-5 text-white p-5 d-flex flex-column justify-content-center contact-panel">
                     <h3 class="fw-bold mb-5">Entre em Contato</h3>
-                    
+
                     <div class="d-flex align-items-center mb-4">
-                        <div class="d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; background-color: #1a426e; border-radius: 50%;">
+                        <div class="contact-icon-circle">
                             <i class="fa-solid fa-phone"></i>
                         </div>
                         <div class="ms-3">
-                            <small class="text-uppercase" style="opacity: 0.7; font-size: 0.75rem; letter-spacing: 0.5px;">Telefone / WhatsApp</small>
-                            <h5 class="mb-0 fw-bold">(11) 99999-9999</h5>
+                            <small class="text-uppercase contact-label">Telefone / WhatsApp</small>
+                            <a class="d-inline-block mb-0 fw-bold text-white text-decoration-none contact-link" id="contactPhone" href="tel:+5511999999999">(11) 99999-9999</a>
                         </div>
                     </div>
 
                     <div class="d-flex align-items-center mb-4">
-                        <div class="d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; background-color: #1a426e; border-radius: 50%;">
+                        <div class="contact-icon-circle">
                             <i class="fa-regular fa-envelope"></i>
                         </div>
                         <div class="ms-3">
-                            <small class="text-uppercase" style="opacity: 0.7; font-size: 0.75rem; letter-spacing: 0.5px;">Email Direto</small>
-                            <h6 class="mb-0 fw-bold">contato@abcabrasivos.com.br</h6>
+                            <small class="text-uppercase contact-label">Email Direto</small>
+                            <a class="d-inline-block mb-0 fw-bold text-white text-decoration-none contact-link" id="contactEmail" href="mailto:contato@abcabrasivos.com.br">contato@abcabrasivos.com.br</a>
                         </div>
                     </div>
 
                     <div class="d-flex align-items-center">
-                        <div class="d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; background-color: #1a426e; border-radius: 50%;">
+                        <div class="contact-icon-circle">
                             <i class="fa-solid fa-location-dot"></i>
                         </div>
                         <div class="ms-3">
-                            <small class="text-uppercase" style="opacity: 0.7; font-size: 0.75rem; letter-spacing: 0.5px;">Localização Central</small>
-                            <h6 class="mb-0 fw-bold">R. Aracajú, 475 - Passo dos Ferreiros,<br>Gravataí - RS</h6>
+                            <small class="text-uppercase contact-label">Localização Central</small>
+                            <div class="mb-0 fw-bold contact-address" id="contactAddress">R. Aracaju, 475 - Passo dos Ferreiros,<br>Gravataí - RS</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Lado Mapa -->
-                <div class="col-md-7 border-start border-light" style="min-height: 400px;">
-                    <iframe 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0; min-height: 400px; filter: grayscale(0.2) contrast(1.1);" 
-                        loading="lazy" 
-                        allowfullscreen 
+                <div class="col-md-7 border-start border-light contact-map-wrapper">
+                    <iframe
+                        id="contactMap"
+                        width="100%"
+                        height="100%"
+                        class="contact-map-frame"
+                        loading="lazy"
+                        allowfullscreen
                         referrerpolicy="no-referrer-when-downgrade"
                         src="https://maps.google.com/maps?q=R.%20Aracaju%2C%20475%20-%20Passo%20dos%20Ferreiros%2C%20Gravata%C3%AD%20-%20RS%2C%2094185-360&t=&z=16&ie=UTF8&iwloc=&output=embed">
                     </iframe>
@@ -211,26 +318,20 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <style>
-        .hover-white { transition: color 0.2s; }
-        .hover-white:hover { color: #ffffff !important; }
-        .footer-link-icon { font-size: 0.6rem; vertical-align: middle; }
-    </style>
-    <footer class="text-white pt-5 pb-4 mt-0" style="background-color: #051426;">
+    <footer class="text-white pt-5 pb-4 mt-0 footer-main">
         <div class="container pt-3">
             <div class="row g-4">
-                <!-- Coluna 1 -->
                 <div class="col-lg-5 col-md-12 mb-4 mb-lg-0 pe-lg-5">
                     <h4 class="text-uppercase fw-bold mb-4">ABC Abrasivos</h4>
-                    <p class="text-white-50" style="font-size: 0.95rem; line-height: 1.7; max-width: 380px;">
+                    <p class="text-white-50 footer-copy">
                         Distribuindo as melhores soluções em abrasivos para todo o Brasil. Qualidade superior para indústria severa.
                     </p>
+                    <p class="text-white-50 footer-copy small mb-1">CNPJ: 00.000.000/0001-00</p>
+                    <p class="text-white-50 footer-copy small">R. Aracaju, 475 - Gravataí / RS — CEP 94185-360</p>
                 </div>
-                
-                <!-- Coluna 2 -->
+
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h6 class="text-uppercase fw-bold mb-4" style="font-size: 0.9rem; letter-spacing: 1px;">Links Úteis</h6>
+                    <h6 class="text-uppercase fw-bold mb-4 footer-title">Links Úteis</h6>
                     <ul class="list-unstyled mb-0 lh-lg">
                         <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none hover-white"><i class="fa-solid fa-chevron-right me-2 footer-link-icon"></i>Início</a></li>
                         <li class="mb-1"><a href="#catalogo" class="text-white-50 text-decoration-none hover-white"><i class="fa-solid fa-chevron-right me-2 footer-link-icon"></i>Produtos</a></li>
@@ -239,27 +340,28 @@
                     </ul>
                 </div>
 
-                <!-- Coluna 3 -->
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                    <h6 class="text-uppercase fw-bold mb-4" style="font-size: 0.9rem; letter-spacing: 1px;">Redes Sociais</h6>
+                    <h6 class="text-uppercase fw-bold mb-4 footer-title">Redes Sociais</h6>
                     <ul class="list-unstyled mb-0 lh-lg">
-                        <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none hover-white">Instagram</a></li>
-                        <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none hover-white">Facebook</a></li>
-                        <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none hover-white">LinkedIn</a></li>
+                        <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none hover-white" id="instagramLink" target="_blank" rel="noreferrer">Instagram</a></li>
+                        <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none hover-white" id="facebookLink" target="_blank" rel="noreferrer">Facebook</a></li>
+                        <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none hover-white" id="linkedinLink" target="_blank" rel="noreferrer">LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
-            
-            <!-- Linha de copyright -->
+
             <div class="row mt-5 pt-4 border-top border-secondary border-opacity-25">
                 <div class="col-12 text-center">
-                    <p class="text-white-50 mb-0" style="font-size: 0.85rem;">&copy; 2026 ABC Abrasivos. Todos os direitos reservados.</p>
+                    <p class="text-white-50 mb-0 footer-copyright">&copy; 2026 ABC Abrasivos. Todos os direitos reservados.</p>
+                    <p class="text-white-50 mt-2 mb-0 footer-copyright" style="font-size: 0.78rem;">
+                        Desenvolvido por <strong class="text-white-50">Matheus Barcelos Alves</strong> &mdash;
+                        <a href="mailto:matheusbarcelosbr@gmail.com" class="text-white-50 text-decoration-none hover-white">matheusbarcelosbr@gmail.com</a>
+                    </p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Modal Orçamento -->
     <div class="modal fade" id="budgetModal" tabindex="-1" aria-labelledby="budgetModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
@@ -269,28 +371,75 @@
                 </div>
                 <div class="modal-body p-4">
                     <div id="cartItemsContainer">
-                        <!-- Itens do orçamento via JS -->
                         <p class="text-center text-muted col-12 my-3">Seu orçamento está vazio.<br>Adicione produtos pelo catálogo.</p>
+                    </div>
+                    <div class="budget-form mt-4 pt-4 border-top">
+                        <h6 class="fw-bold mb-3">Dados para o atendimento</h6>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="customerName" class="form-label">Nome <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="customerName" placeholder="Seu nome">
+                                <div class="invalid-feedback">Por favor, informe seu nome antes de enviar.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="customerCompany" class="form-label">Empresa</label>
+                                <input type="text" class="form-control" id="customerCompany" placeholder="Nome da empresa">
+                            </div>
+                            <div class="col-12">
+                                <label for="customerNotes" class="form-label">Observações</label>
+                                <textarea class="form-control" id="customerNotes" rows="3" placeholder="Prazo, dúvidas, medidas, acabamento..."></textarea>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer border-0 p-4 bg-light rounded-bottom d-flex justify-content-between align-items-center">
-                    <h5 class="fw-bold mb-0 text-dark">Itens: <span id="cartTotalItems">0</span></h5>
-                    <button type="button" class="btn btn-success btn-lg px-4" id="btnSendWhatsApp" disabled>
-                        <i class="fa-brands fa-whatsapp me-2"></i> Solicitar Orçamento
-                    </button>
+                    <div class="d-flex flex-column flex-md-row gap-3 w-100 justify-content-between align-items-md-center">
+                        <h5 class="fw-bold mb-0 text-dark">
+                            Itens: <span id="cartTotalItems">0</span>
+                            <br>
+                            <small class="text-success fs-5 mt-1 d-block" id="cartTotalPrice">R$ 0,00</small>
+                        </h5>
+                        <div class="d-flex flex-column flex-sm-row gap-2">
+                            <button type="button" class="btn btn-outline-secondary" id="btnClearCart">
+                                Limpar lista
+                            </button>
+                            <button type="button" class="btn btn-success btn-lg px-4" id="btnSendWhatsApp" disabled>
+                                <i class="fa-brands fa-whatsapp me-2"></i> Solicitar Orçamento
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap JS Bundle com Popper -->
+    <button class="btn btn-secondary rounded-circle back-to-top" id="backToTop" type="button" aria-label="Voltar ao topo">
+        <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-4">
+                <div class="modal-body py-4">
+                    <div class="mb-3">
+                        <i class="fa-solid fa-circle-check text-success" style="font-size: 4rem;"></i>
+                    </div>
+                    <h4 class="fw-bold mb-2" id="successModalLabel">Orçamento enviado!</h4>
+                    <p class="text-muted mb-0">Seu orçamento foi encaminhado para o nosso WhatsApp.<br>Em breve entraremos em contato.</p>
+                </div>
+                <div class="modal-footer border-0 justify-content-center pb-4 pt-0">
+                    <button type="button" class="btn btn-success px-5" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ once: true, offset: 50 });
     </script>
-    
+    <script src="js/config.js"></script>
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>
 </body>
